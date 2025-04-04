@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гостиница "Посейдон"</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="header-content">
+            <h1>Гостиница "Посейдон"</h1>
+            <p>Ваш уютный отдых в окружении природы</p>
+        </div>
+        
+        <div class="booking-form-container">
+            <form class="booking-form" action="/api/booking" method="post">
+                <div class="form-group">
+                    <label for="check-in">Дата заезда</label>
+                    <input type="date" id="check-in" name="checkInDate" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="check-out">Дата выезда</label>
+                    <input type="date" id="check-out" name="checkOutDate" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="room-type">Тип номера</label>
+                    <select id="room-type" name="roomType" required>
+                        <option value="">Выберите тип</option>
+                        <option value="economy">Эконом</option>
+                        <option value="standard">Средний</option>
+                        <option value="luxury">Люкс</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <button type="submit" class="book-button">Забронировать</button>
+                </div>
+            </form>
+        </div>
+    </header>
+
+    <!-- Body Section -->
+    <section class="about-section">
+        <h2>Наши номера</h2>
+        
+        <div class="room-cards">
+            <div class="card">
+                <div class="card-image">
+                    <img src="images/economy-room.jpg" alt="Номер Эконом">
+                </div>
+                <div class="card-content">
+                    <h3>Эконом</h3>
+                    <p>Уютный номер с основными удобствами для комфортного отдыха. Идеально подходит для путешественников с ограниченным бюджетом.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-image">
+                    <img src="images/standard-room.jpg" alt="Номер Средний">
+                </div>
+                <div class="card-content">
+                    <h3>Средний</h3>
+                    <p>Просторный номер с дополнительными удобствами и прекрасным видом на лес. Отличный выбор для семейного отдыха.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-image">
+                    <img src="images/luxury-room.jpg" alt="Номер Люкс">
+                </div>
+                <div class="card-content">
+                    <h3>Люкс</h3>
+                    <p>Премиальный номер с панорамными окнами, джакузи и всеми возможными удобствами для незабываемого отдыха в окружении природы.</p>
+                </div>
+            </div>
+        </div>
+
+        <h2>Особенности отеля</h2>
+        
+        <div class="feature-cards">
+            <div class="card">
+                <div class="card-image">
+                    <img src="images/forest-walk.jpg" alt="Лесные прогулки">
+                </div>
+                <div class="card-content">
+                    <h3>Лесные прогулки</h3>
+                    <p>Насладитесь живописными тропами и свежим воздухом в окружающем лесу.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-image">
+                    <img src="images/restaurant.jpg" alt="Ресторан с видом на лес">
+                </div>
+                <div class="card-content">
+                    <h3>Ресторан с видом на лес</h3>
+                    <p>Попробуйте изысканные блюда, наслаждаясь панорамным видом на зеленый лес.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-image">
+                    <img src="images/spa.jpg" alt="Спа и велнес">
+                </div>
+                <div class="card-content">
+                    <h3>Спа и велнес</h3>
+                    <p>Расслабьтесь в нашем спа-центре с использованием натуральных продуктов.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Контактная информация</h3>
+                <ul>
+                    <li>Телефон: +7 (123) 456-78-90</li>
+                    <li>Email: info@poseidon-hotel.ru</li>
+                    <li>Адрес: г. Зеленоград, ул. Лесная, д. 123</li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Часы работы</h3>
+                <ul>
+                    <li>Регистрация заезда: 14:00</li>
+                    <li>Регистрация выезда: 12:00</li>
+                    <li>Ресепшн: 24/7</li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>О гостинице</h3>
+                <p>
+                    Гостиница "Посейдон" - это уютное место для отдыха в окружении живописного леса. 
+                    Мы предлагаем комфортные номера различных категорий и высококачественный сервис.
+                </p>
+                <p class="copyright">
+                    © 2025 Гостиница "Посейдон". Все права защищены.
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
