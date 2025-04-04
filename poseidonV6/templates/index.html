@@ -1,0 +1,158 @@
+{% extends "layout.html" %}
+
+{% block title %}Гостиница "Посейдон" - Уютный отдых в окружении природы{% endblock %}
+
+{% block content %}
+<!-- Header Section -->
+<header class="hero">
+    <div class="hero-content">
+        <h1>Гостиница "Посейдон"</h1>
+        <div class="booking-form-container">
+            <div class="booking-form">
+                <h2>Забронировать номер</h2>
+                
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <div class="alert alert-{{ category }}">{{ message }}</div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                
+                <form action="{{ url_for('book') }}" method="post">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="check_in">Дата заезда</label>
+                            <input type="date" id="check_in" name="check_in" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="check_out">Дата выезда</label>
+                            <input type="date" id="check_out" name="check_out" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="room_type">Тип номера</label>
+                            <select id="room_type" name="room_type" required>
+                                <option value="">Выберите тип номера</option>
+                                <option value="economy">Эконом</option>
+                                <option value="standard">Средний</option>
+                                <option value="luxury">Люкс</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="guest_name">Ваше имя</label>
+                            <input type="text" id="guest_name" name="guest_name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="guest_email">Email</label>
+                            <input type="email" id="guest_email" name="guest_email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="guest_phone">Телефон</label>
+                            <input type="tel" id="guest_phone" name="guest_phone">
+                        </div>
+                        
+                        <div class="form-group form-submit">
+                            <button type="submit" class="btn btn-primary">Забронировать</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<main class="container">
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="section-header">
+            <h2>О нашей гостинице</h2>
+            <p class="section-description">Уютное место в окружении природы</p>
+        </div>
+        
+        <div class="about-content">
+            <div class="about-text">
+                <p>
+                    Расположена в живописном уголке возле моря, в окружении природы заповедника Утриш. Номера с удобствами (кондиционер, Wi-Fi, TV), есть ресторан с местной кухней и бассейн. Подходит для спокойного отдыха, пляжного отдыха и экотуризма. Рядом – дельфинарий и можжевеловые рощи.
+                </p>
+                <p>
+                    Мы предлагаем различные типы номеров, от экономичных вариантов до люксов, чтобы удовлетворить потребности каждого гостя. Наша цель - создать для вас незабываемый отдых в гармонии с природой.
+                </p>
+            </div>
+            <div class="about-image">
+                <img src="{{ url_for('static', filename='images/hotel-exterior.jpg') }}" alt="Гостиница Посейдон">
+            </div>
+        </div>
+    </section>
+    
+    <!-- Rooms Section -->
+    <section class="rooms-section" id="rooms">
+        <div class="section-header">
+            <h2>Наши номера</h2>
+            <p class="section-description">Выберите идеальный вариант для вашего отдыха</p>
+        </div>
+        
+        <div class="rooms-grid">
+            {% for room in rooms %}
+            <div class="room-card">
+                <div class="room-image">
+                    <img src="{{ url_for('static', filename=room.image.replace('static/', '')) }}" alt="{{ room.title }}">
+                </div>
+                <div class="room-content">
+                    <h3>{{ room.title }}</h3>
+                    <p>{{ room.description }}</p>
+                    <p class="room-price">от {{ room.price }} ₽ / ночь</p>
+                </div>
+                <div class="room-footer">
+                    <a href="{{ url_for('room_detail', room_type=room.type) }}" class="btn btn-secondary">Подробнее</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    
+    <!-- Nature Section -->
+    <section class="nature-section">
+        <div class="section-header">
+            <h2>Окружающая природа</h2>
+            <p class="section-description">Насладитесь красотой леса</p>
+        </div>
+        
+        <div class="nature-grid">
+            {% for i in range(1, 5) %}
+            <div class="nature-image">
+                <img src="{{ url_for('static', filename='images/nature-' + i|string + '.jpg') }}" alt="Природа вокруг гостиницы {{ i }}">
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</main>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Установка минимальной даты заезда на сегодня
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('check_in').min = today;
+    
+    // Обновление минимальной даты выезда при изменении даты заезда
+    document.getElementById('check_in').addEventListener('change', function() {
+        const checkInDate = new Date(this.value);
+        checkInDate.setDate(checkInDate.getDate() + 1);
+        const minCheckOutDate = checkInDate.toISOString().split('T')[0];
+        document.getElementById('check_out').min = minCheckOutDate;
+        
+        // Если текущая дата выезда меньше минимальной, обновляем её
+        if (document.getElementById('check_out').value && 
+            document.getElementById('check_out').value < minCheckOutDate) {
+            document.getElementById('check_out').value = minCheckOutDate;
+        }
+    });
+</script>
+{% endblock %}
+

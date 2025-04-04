@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Гостиница "Посейдон"{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    {% block head %}{% endblock %}
+</head>
+<body>
+    {% block content %}{% endblock %}
+    
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Контактная информация блок v0</h3>
+                <ul class="contact-list">
+                    <li><i class="icon-phone"></i> +7 (333) 333-33330</li>
+                    <li><i class="icon-mail"></i> <a href="mailto:info@poseidon-hotel.ru">bezemaila@ya.ru</a></li>
+                    <li><i class="icon-map"></i> с. Большой Утриш, ул. Лесная, д.3 кв.3</li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Полезные ссылки блок v0</h3>
+                <ul class="links-list">
+                    <li><a href="{{ url_for('about') }}">О гостинице</a></li>
+                    <li><a href="{{ url_for('index') }}#rooms">Номера и цены</a></li>
+                    <li><a href="#">Услуги</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Подпишитесь на новости</h3>
+                <p>Получайте информацию о специальных предложениях и акциях блок из v0</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Ваш email" required>
+                    <button type="submit">Отправить</button>
+                </form>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="icon-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="icon-facebook"></i></a>
+                    <a href="#" class="social-icon"><i class="icon-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; {{ now.year }} Гостиница "Посейдон". Все права защищены.</p>
+        </div>
+    </footer>
+    
+    {% block scripts %}{% endblock %}
+</body>
+</html>
+
