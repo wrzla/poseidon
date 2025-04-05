@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гостиница "Посейдон" - Бронирование</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="header-content">
+            <h1 class="hotel-name">Гостиница "Посейдон"</h1>
+            
+            <!-- Форма бронирования -->
+            <div class="booking-form">
+                <div class="form-group">
+                    <label for="check-in">Дата заезда</label>
+                    <input type="date" id="check-in" name="check-in">
+                </div>
+                
+                <div class="form-group">
+                    <label for="check-out">Дата выезда</label>
+                    <input type="date" id="check-out" name="check-out">
+                </div>
+                
+                <div class="form-group">
+                    <label for="room-type">Тип номера</label>
+                    <select id="room-type" name="room-type">
+                        <option value="economy">Эконом</option>
+                        <option value="standard">Средний</option>
+                        <option value="luxury">Люкс</option>
+                    </select>
+                </div>
+                
+                <button class="booking-button" onclick="bookRoom()">Забронировать</button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Основное содержимое -->
+    <main class="main-content">
+        <section class="about-section">
+            <h2>О нашей гостинице</h2>
+            <p>Гостиница "Посейдон" расположена в живописном месте, окруженном лесом. Мы предлагаем комфортное проживание и отличный сервис для наших гостей.</p>
+        </section>
+        
+        <!-- Галерея номеров -->
+        <section class="rooms-gallery">
+            <h2>Наши номера</h2>
+            
+            <div class="room-card">
+                <div class="room-image">
+                    <!-- Фрейм для фото -->
+                    <img src="images/utrish-economy-room.jpg" alt="Номер Эконом">
+                </div>
+                <div class="room-description">
+                    <h3>Эконом</h3>
+                    <p>Уютный номер с основными удобствами для комфортного проживания. Идеально подходит для путешественников с ограниченным бюджетом.</p>
+                    <p class="price">от 2000 руб/сутки</p>
+                </div>
+            </div>
+            
+            <div class="room-card">
+                <div class="room-image">
+                    <!-- Фрейм для фото -->
+                    <img src="images/utrish-standard-room.jpg" alt="Номер Средний">
+                </div>
+                <div class="room-description">
+                    <h3>Средний</h3>
+                    <p>Просторный номер с дополнительными удобствами. Отличный выбор для тех, кто ценит комфорт по разумной цене.</p>
+                    <p class="price">от 3500 руб/сутки</p>
+                </div>
+            </div>
+            
+            <div class="room-card">
+                <div class="room-image">
+                    <!-- Фрейм для фото -->
+                    <img src="images/utrish-luxury-room.jpg" alt="Номер Люкс">
+                </div>
+                <div class="room-description">
+                    <h3>Люкс</h3>
+                    <p>Премиальный номер с панорамным видом на лес и всеми возможными удобствами для незабываемого отдыха.</p>
+                    <p class="price">от 5000 руб/сутки</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Галерея территории -->
+        <section class="territory-gallery">
+            <h2>Территория и окрестности</h2>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/utrish-territory-1.jpg" alt="Территория гостиницы">
+                    <p>Ухоженная территория гостиницы</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/utrish-forest-path.jpg" alt="Лесная тропа">
+                    <p>Живописные лесные тропы для прогулок</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/utrish-gazebo.jpg" alt="Беседка">
+                    <p>Уютные беседки для отдыха</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/utrish-sea.jpg" alt="Морской пейзаж">
+                    <p>Озеро в пешей доступности</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Подвал сайта -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3>Контактная информация</h3>
+                <p>Адрес: г. Зеленоград, ул. Лесная, 123</p>
+                <p>Телефон: +7 (123) 456-78-90</p>
+                <p>Email: info@poseidon-hotel.ru</p>
+            </div>
+            
+            <div class="social-links">
+                <h3>Мы в социальных сетях</h3>
+                <ul>
+                    <li><a href="#">ВКонтакте</a></li>
+                    <li><a href="#">Telegram</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-nav">
+                <h3>Навигация</h3>
+                <ul>
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#">О нас</a></li>
+                    <li><a href="#">Номера</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 Гостиница "Посейдон". Все права защищены.</p>
+        </div>
+    </footer>
+    
+    <script>
+        function bookRoom() {
+            const checkIn = document.getElementById('check-in').value;
+            const checkOut = document.getElementById('check-out').value;
+            const roomType = document.getElementById('room-type').value;
+            
+            if (!checkIn || !checkOut) {
+                alert('Пожалуйста, выберите даты заезда и выезда');
+                return;
+            }
+            
+            // Отправка данных на сервер
+            fetch('/book', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    checkIn: checkIn,
+                    checkOut: checkOut,
+                    roomType: roomType
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Бронирование успешно! Номер бронирования: ' + data.bookingId);
+                } else {
+                    alert('Ошибка при бронировании: ' + data.message);
+                }
+            })
+            .catch(error => {
+                alert('Произошла ошибка при отправке запроса');
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</body>
+</html>
+
