@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Админ-панель - Гостиница "Посейдон"</title>
+    <link rel="stylesheet" href="admin.css">
+    <link href="https://fonts.cdnfonts.com/css/futura-pt" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-container">
+        <header class="admin-header">
+            <h1>Админ-панель гостиницы "Посейдон"</h1>
+            <div class="admin-nav">
+                <button class="nav-button active" data-tab="bookings">Бронирования</button>
+                <button class="nav-button" data-tab="rooms">Номера</button>
+            </div>
+        </header>
+
+        <main class="admin-content">
+            <section id="bookings-tab" class="tab-content active">
+                <div class="section-header">
+                    <h2>Бронирования</h2>
+                    <div class="filter-controls">
+                        <input type="text" id="search-bookings" placeholder="Поиск по имени или телефону">
+                        <button id="refresh-bookings" class="refresh-button">Обновить</button>
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <table id="bookings-table" class="data-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Дата заезда</th>
+                                <th>Дата выезда</th>
+                                <th>Тип номера</th>
+                                <th>Имя гостя</th>
+                                <th>Телефон</th>
+                                <th>Email</th>
+                                <th>Дата создания</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="loading-row">
+                                <td colspan="8">Загрузка данных...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="rooms-tab" class="tab-content">
+                <div class="section-header">
+                    <h2>Номера</h2>
+                    <div class="filter-controls">
+                        <button id="refresh-rooms" class="refresh-button">Обновить</button>
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <table id="rooms-table" class="data-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Тип номера</th>
+                                <th>Описание</th>
+                                <th>Цена</th>
+                                <th>Изображение</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="loading-row">
+                                <td colspan="5">Загрузка данных...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+        <footer class="admin-footer">
+            <p>&copy; 2025 Гостиница "Посейдон". Административная панель.</p>
+        </footer>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

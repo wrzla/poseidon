@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гостиница "Посейдон" - Большой Утриш</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.cdnfonts.com/css/futura-pt" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1>Гостиница "Посейдон"</h1>
+            <p>Ваш уютный отдых в окружении природы Большого Утриша</p>
+        </div>
+        
+        <div class="booking-form-container">
+            <form id="booking-form" class="booking-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="check-in">Дата заезда</label>
+                        <input type="date" id="check-in" name="checkInDate" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="check-out">Дата выезда</label>
+                        <input type="date" id="check-out" name="checkOutDate" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="room-type">Тип номера</label>
+                        <select id="room-type" name="roomType" required>
+                            <option value="">Выберите тип</option>
+                            <option value="Эконом">Эконом (2000р/сутки)</option>
+                            <option value="Средний">Средний (3000р/сутки)</option>
+                            <option value="Люкс">Люкс (4000р/сутки)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="guest-name">Ваше имя</label>
+                        <input type="text" id="guest-name" name="guestName" placeholder="Иван Иванов" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="guest-phone">Номер телефона</label>
+                        <input type="tel" id="guest-phone" name="guestPhone" placeholder="+7 (XXX) XXX-XX-XX" required>
+                    </div>
+                    
+                    <div class="form-group button-group">
+                        <label class="invisible">Забронировать</label>
+                        <button type="submit" class="book-button">Забронировать</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </header>
+
+    <section class="about-section">
+        <h2>Наши номера</h2>
+        
+        <div class="room-cards">
+            <div class="card">
+                <div class="card-image">
+                    <img src="poseidonNI/images/economy-room.jpg" alt="Номер Эконом">
+                </div>
+                <div class="card-content">
+                    <h3>Эконом</h3>
+                    <p>Уютный номер с основными удобствами для комфортного отдыха. Идеально подходит для путешественников с ограниченным бюджетом.</p>
+                    <div class="card-price">2000р/сутки</div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-image">
+                    <img src="poseidonNI/images/standard-room.jpg" alt="Номер Средний">
+                </div>
+                <div class="card-content">
+                    <h3>Средний</h3>
+                    <p>Просторный номер с дополнительными удобствами и прекрасным видом на лес. Отличный выбор для семейного отдыха.</p>
+                    <div class="card-price">3000р/сутки</div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-image">
+                    <img src="poseidonNI/images/luxury-room.jpg" alt="Номер Люкс">
+                </div>
+                <div class="card-content">
+                    <h3>Люкс</h3>
+                    <p>Премиальный номер с панорамными окнами, джакузи и всеми возможными удобствами для незабываемого отдыха в окружении природы.</p>
+                    <div class="card-price">4000р/сутки</div>
+                </div>
+            </div>
+        </div>
+
+        <h2>Особенности отеля</h2>
+        
+        <div class="feature-cards">
+            <div class="card">
+                <div class="card-image">
+                    <img src="poseidonNI/images/forest-walk.jpg" alt="Лесные прогулки">
+                </div>
+                <div class="card-content">
+                    <h3>Лесные прогулки</h3>
+                    <p>Насладитесь живописными тропами и свежим воздухом в заповеднике Большой Утриш. Уникальная природа и чистейший воздух.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-image">
+                    <img src="poseidonNI/images/restaurant.jpg" alt="Ресторан с видом на лес">
+                </div>
+                <div class="card-content">
+                    <h3>Ресторан с видом на море</h3>
+                    <p>Попробуйте блюда местной кухни, наслаждаясь захватывающим видом на Черное море и реликтовый можжевеловый лес.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-image">
+                    <img src="poseidonNI/images/spa.jpg" alt="Пляжный отдых">
+                </div>
+                <div class="card-content">
+                    <h3>Пляжный отдых</h3>
+                    <p>Всего в 15 минутах ходьбы от гостиницы находятся живописные пляжи с кристально чистой водой и уникальными скалами.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Контактная информация</h3>
+                <ul>
+                    <li>Телефон: +7 (123) 456-78-90</li>
+                    <li>Email: poseidon23@mail.ru</li>
+                    <li>Адрес: с.Большой Утриш, ул. Лесная, д. 3, кв. 3</li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>О гостинице</h3>
+                <p>
+                    Гостиница "Посейдон" - это уютное место для отдыха в окружении живописного заповедника Большой Утриш. 
+                    Мы предлагаем комфортные номера различных категорий и высококачественный сервис.
+                </p>
+                <p class="copyright">
+                    © 2025 Гостиница "Посейдон". Все права защищены.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

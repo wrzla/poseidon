@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Подтверждение бронирования - Гостиница "Посейдон"</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.cdnfonts.com/css/futura-pt" rel="stylesheet">
+</head>
+<body>
+    <header class="header small-header">
+        <div class="header-content">
+            <h1>Гостиница "Посейдон"</h1>
+            <p>Подтверждение бронирования</p>
+        </div>
+    </header>
+
+    <section class="confirmation-section">
+        <div class="confirmation-container">
+            <h2>Подтверждение бронирования</h2>
+            
+            <div class="booking-details">
+                <h3>Информация о бронировании</h3>
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <span class="detail-label">Дата заезда:</span>
+                        <span id="confirm-check-in" class="detail-value"></span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Дата выезда:</span>
+                        <span id="confirm-check-out" class="detail-value"></span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Тип номера:</span>
+                        <span id="confirm-room-type" class="detail-value"></span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Имя гостя:</span>
+                        <span id="confirm-guest-name" class="detail-value"></span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Номер телефона:</span>
+                        <span id="confirm-guest-phone" class="detail-value"></span>
+                    </div>
+                </div>
+                
+                <div class="price-summary">
+                    <div class="price-details">
+                        <div class="price-row">
+                            <span>Стоимость номера:</span>
+                            <span id="room-price">0</span>р/сутки
+                        </div>
+                        <div class="price-row">
+                            <span>Количество суток:</span>
+                            <span id="nights-count">0</span>
+                        </div>
+                    </div>
+                    <div class="total-price">
+                        <span>Итого к оплате:</span>
+                        <span id="total-price">0</span>р
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sms-verification">
+                <h3>Подтверждение по SMS</h3>
+                <p>На указанный вами номер телефона был отправлен код подтверждения. Пожалуйста, введите его ниже:</p>
+                
+                <form id="verification-form" class="verification-form">
+                    <div class="form-group">
+                        <label for="sms-code">Код из SMS</label>
+                        <input type="text" id="sms-code" name="smsCode" placeholder="Введите 4-значный код" maxlength="4" required>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="book-button">Подтвердить бронирование</button>
+                        <button type="button" id="resend-code" class="secondary-button">Отправить код повторно</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Контактная информация</h3>
+                <ul>
+                    <li>Телефон: +7 (123) 456-78-90</li>
+                    <li>Email: poseidon23@mail.ru</li>
+                    <li>Адрес: с.Большой Утриш, ул. Лесная, д. 3, кв. 3</li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>О гостинице</h3>
+                <p>
+                    Гостиница "Посейдон" - это уютное место для отдыха в окружении живописного заповедника Большой Утриш. 
+                    Мы предлагаем комфортные номера различных категорий и высококачественный сервис.
+                </p>
+                <p class="copyright">
+                    © 2025 Гостиница "Посейдон". Все права защищены.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="confirm.js"></script>
+</body>
+</html>
